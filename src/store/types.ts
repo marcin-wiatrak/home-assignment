@@ -1,1 +1,3 @@
-export interface BoardInterface {}
+export interface BoardInterface {
+  todoList: TTodo[]
+}
