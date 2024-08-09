@@ -1,5 +1,5 @@
-import './App.scss';
-import { WorkspacesSidebar } from "./components/workspacesSidebar"
+import './App.scss'
+import { WorkspacesSidebar } from './components/workspacesSidebar'
 
 export const App = () => {
   return (
