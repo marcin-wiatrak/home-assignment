@@ -1,7 +1,7 @@
 # ToDo
-- [ ] Create data mock with multilevel subtasks
-- [ ] Create menu items
-- [ ] Create task and subtask component
+- [x] Create data mock with multilevel subtasks (9.08 / 12:10)
+- [x] Create menu items
+- [x] Create task and subtask component
 - [ ] Create **Add a card** component (universal button)
 - [ ] Wrap layout into container
 - [ ] Add logic to add task
