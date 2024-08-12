@@ -1,12 +1,12 @@
 import './TodoListItem.scss'
 import { EditIcon, DeleteIcon } from '../../../assets/icons'
+import { TTodo } from '../../../types.ts'
 
 type TTodoListItemProps = {
-    todo: TTodo
+  todo: TTodo
 }
 
-
-export const TodoListItem = ({todo}: TTodoListItemProps) => {
+export const TodoListItem = ({ todo }: TTodoListItemProps) => {
   return (
     <div className="todo-list-item-container">
       <div className="todo-list-item-content">
