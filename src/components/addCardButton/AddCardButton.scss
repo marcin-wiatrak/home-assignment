@@ -1,0 +1,27 @@
+.add-card-button-container {
+  color: #88819F;
+  padding: 8px 12px 8px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  user-select: none;
+
+  p {
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    box-shadow: 0 0 5px 0 #12033E1A, 0 1px 1px 0 #12033E1A;
+  }
+}
