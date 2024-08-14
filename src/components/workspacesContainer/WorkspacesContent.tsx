@@ -18,8 +18,6 @@ import { ShortcutHandler } from '../shortcutHandler'
 export const WorkspacesContent = () => {
   const dispatch = useDispatch()
   const todos = useSelector(selectors.selectTodos)
-  const history = useSelector(selectors.selectActionsHistory)
-  const currentStepBack = useSelector(selectors.selectCurrentStepBack)
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -59,8 +57,6 @@ export const WorkspacesContent = () => {
   const handleRedoAction = () => {
     dispatch(boardActions.redoAction())
   }
-
-  console.log('history', currentStepBack, history.length, history)
 
   return (
     <div className="workspaces-container">
