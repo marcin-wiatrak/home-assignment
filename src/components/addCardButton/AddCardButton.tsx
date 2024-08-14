@@ -2,14 +2,14 @@ import './AddCardButton.scss'
 import { AddIcon } from '../../assets/icons/Add.tsx'
 
 type TAddCardButtonProps = {
-    onClick: () => void
+  onClick: () => void
 }
 
-export const AddCardButton = ({onClick}: TAddCardButtonProps) => {
+export const AddCardButton = ({ onClick }: TAddCardButtonProps) => {
   return (
     <div className="add-card-button-container" onClick={onClick}>
-        <AddIcon />
-        <p>Add a card</p>
+      <AddIcon />
+      <p>Add a card</p>
     </div>
   )
 }

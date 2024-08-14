@@ -1,0 +1,22 @@
+.workspaces-navigation-item-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+  color: #b7bec5;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  &:hover {
+    color: #007dfc;
+  }
+
+  &.active {
+    color: #0068d2;
+  }
+}
