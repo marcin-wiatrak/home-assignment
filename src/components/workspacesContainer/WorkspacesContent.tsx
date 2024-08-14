@@ -13,10 +13,13 @@ import {
 } from '@dnd-kit/core'
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { findParentTodo, findTaskIndex, updateTaskList } from '../../utils.ts'
+import { ShortcutHandler } from '../shortcutHandler'
 
 export const WorkspacesContent = () => {
   const dispatch = useDispatch()
   const todos = useSelector(selectors.selectTodos)
+  const history = useSelector(selectors.selectActionsHistory)
+  const currentStepBack = useSelector(selectors.selectCurrentStepBack)
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -49,16 +52,20 @@ export const WorkspacesContent = () => {
     }
   }
 
-  console.log('todos', todos)
+  const handleUndoAction = () => {
+    dispatch(boardActions.undoAction())
+  }
+
+  const handleRedoAction = () => {
+    dispatch(boardActions.redoAction())
+  }
+
+  console.log('history', currentStepBack, history.length, history)
 
   return (
     <div className="workspaces-container">
-      <DndContext
-        sensors={sensors}
-        // onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-        collisionDetection={closestCorners}
-      >
+      <ShortcutHandler onUndo={handleUndoAction} onRedo={handleRedoAction} />
+      <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
         <TodoList todos={todos} />
       </DndContext>
     </div>

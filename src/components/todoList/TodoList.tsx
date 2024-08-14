@@ -8,7 +8,7 @@ import { boardActions } from '../../store/slices'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import React, { useState } from 'react'
 import { TaskDetailsModal } from '../taskDetailsModal/TaskDetailsModal.tsx'
-import { useDisclose } from '../../store/hooks/useDisclose.tsx'
+import { useDisclose } from '../../hooks/useDisclose.tsx'
 
 type TTodoListProps = {
   todos: TTodo[]

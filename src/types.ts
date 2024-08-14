@@ -3,7 +3,6 @@ export type TTodo = {
   description: string
   isCompleted: boolean
   subtasks: TTodo[]
-  parentId?: string
 }
 
 export type TMenuItem = {

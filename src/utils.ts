@@ -139,3 +139,15 @@ export const completeTask = (todos: TTodo[], taskId: UniqueIdentifier): TTodo[] 
     return todo
   })
 }
+
+export const handleAddUserActionToHistory = (
+  currentHistory: TTodo[][],
+  currentStateOfTodoList: TTodo[],
+) => {
+  const currentHistoryCopy = [...currentHistory]
+  if (currentHistory.length === 20) {
+    currentHistoryCopy.shift()
+  }
+  currentHistoryCopy.push(currentStateOfTodoList)
+  return currentHistoryCopy
+}
