@@ -14,10 +14,22 @@ import {
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { findParentTodo, findTaskIndex, updateTaskList } from '../../utils.ts'
 import { ShortcutHandler } from '../shortcutHandler'
+import { useEffect } from 'react'
 
 export const WorkspacesContent = () => {
   const dispatch = useDispatch()
   const todos = useSelector(selectors.selectTodos)
+
+  useEffect(() => {
+    setTimeout(() => {
+      localStorage.setItem('todos', JSON.stringify(todos))
+    }, 500)
+  }, [todos])
+
+  useEffect(() => {
+    const todosLS = localStorage.getItem('todos')
+    if (todosLS && todosLS.length) dispatch(boardActions.setTasksListFromLS(JSON.parse(todosLS)))
+  }, [dispatch])
 
   const sensors = useSensors(
     useSensor(PointerSensor, {

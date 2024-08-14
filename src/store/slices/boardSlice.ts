@@ -1,6 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BoardInterface } from '../types'
-import { TODOS } from '../../constants.ts'
 import { RootState } from '../store.ts'
 import { v4 as uuidv4 } from 'uuid'
 import {
@@ -13,7 +12,7 @@ import {
 import { TTodo } from '../../types.ts'
 
 const initialState: BoardInterface | Record<string, never> = {
-  todoList: TODOS,
+  todoList: [],
   actionsHistory: [],
   currentStepBack: 1,
 }
@@ -102,6 +101,9 @@ export const boardSlice = createSlice({
     },
     setActionsHistory: (state, { payload }: PayloadAction<TTodo[][]>) => {
       state.actionsHistory = payload
+    },
+    setTasksListFromLS: (state, { payload }: PayloadAction<TTodo[]>) => {
+      state.todoList = payload
     },
   },
 })
