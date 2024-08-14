@@ -1,12 +1,46 @@
+.todo-list-item-wrapper {
+  margin-bottom: 0;
+  transition: margin-bottom 0.2s ease-in-out;
+  transition-delay: 0.5s;
+  position: relative;
+  width: 100%;
+  transform: translateX(0);
+  opacity: 1;
+
+  &.slide-out-animation {
+    animation: slideOut 1s ease-in-out 3s 1 normal forwards;
+  }
+
+  &:hover {
+    margin-bottom: 40px;
+
+    .todo-list-item-add-subtask-container {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 .todo-list-item-container {
-  background-color: #FFF;
+  position: relative;
+  background-color: #fff;
   width: 100%;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  box-shadow: 0 0 1px 0 #12033E1A, 0 1px 1px 0 #12033E1A;
+  box-shadow:
+    0 0 1px 0 #12033e1a,
+    0 1px 1px 0 #12033e1a;
+  z-index: 1;
+
+  &:hover {
+    .todo-list-item-actions {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 .todo-list-item-content {
@@ -17,10 +51,80 @@
 
 .todo-list-item-description {
   line-height: 18px;
-  color: #001C39;
+  color: #001c39;
 }
 
 .todo-list-item-actions {
   display: flex;
   gap: 12px;
+  opacity: 0;
+  transform: translateX(50%);
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+
+  &-button {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.todo-list-item-add-subtask-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 16px;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-100%);
+  margin: 8px 0;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+  transition-delay: 0.5s;
+  z-index: 0;
+
+  &.task-complete > .complete-task-button-container {
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #317700;
+    color: #e3e3e3;
+    width: 100%;
+    cursor: default;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  51% {
+    margin-top: 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  99% {
+    margin-top: -50px;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }

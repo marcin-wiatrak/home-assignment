@@ -1,0 +1,93 @@
+.new-task-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  backdrop-filter: (5px);
+  z-index: 5;
+}
+
+.new-task-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow:
+    0 0 5px 0 #12033e1a,
+    0 1px 1px 0 #12033e1a;
+  padding: 16px;
+  min-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 20;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #001c39;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 8px;
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #12033e1a;
+      border-radius: 4px;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    &-button {
+      cursor: pointer;
+      border: 0;
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      &.cancel {
+        background-color: transparent;
+        color: #88819f;
+
+        &:hover {
+          color: #001c39;
+        }
+      }
+
+      &.confirm {
+        background-color: #e3e3e3;
+        color: #88819f;
+
+        &:hover {
+          color: #001c39;
+        }
+      }
+    }
+  }
+}

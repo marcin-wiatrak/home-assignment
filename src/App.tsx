@@ -4,9 +4,14 @@ import { WorkspacesContent } from './components/workspacesContainer'
 
 export const App = () => {
   return (
-    <div className="container">
-      <WorkspacesSidebar />
-      <WorkspacesContent />
-    </div>
+    <>
+      <div className="mobile-warning">
+        <p>Mobile version is not supported yet. Please use desktop version.</p>
+      </div>
+      <div className="container">
+        <WorkspacesSidebar />
+        <WorkspacesContent />
+      </div>
+    </>
   )
 }

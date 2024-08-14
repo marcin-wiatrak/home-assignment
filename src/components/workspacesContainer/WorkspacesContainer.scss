@@ -1,8 +1,9 @@
 .workspaces-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #ECF1FD;
-    width: 100%;
-    padding: 8px;
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ecf1fd;
+  width: 100%;
+  padding: 8px;
+  border-radius: 16px;
+  overflow-y: auto;
 }
